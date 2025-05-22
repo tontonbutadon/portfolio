@@ -4,8 +4,8 @@ import Image from 'next/image';
 const SkillSection: React.FC = () => {
   return (
     <section className="max-w-sm md:max-w-lg lg:max-w-3xl xl:max-w-5xl m-auto">
-      <h2 className="text-4xl text-center font-semibold">スキル</h2>
-      <div className="flex justify-center gap-2 my-3 flex-wrap text-sm">
+      <h2 className="text-4xl text-center font-semibold mb-8">スキル</h2>
+      <div className="flex justify-center gap-4 my-3 flex-wrap text-sm rounded-3xl shadow mb-10">
         <button className="p-4 rounded-lg cursor-pointer">フロントエンド</button>
         <button className="p-4 rounded-lg cursor-pointer">Shopify開発</button>
         <button className="p-4 rounded-lg cursor-pointer">バックエンド・AWS</button>
@@ -16,21 +16,21 @@ const SkillSection: React.FC = () => {
         {/* Frontend */}
         <div className="w-full mx-auto">
           <ul className="flex justify-between gap-6">
-            <li className="p-5 bg-white rounded-lg">
+            <li className="p-5 bg-white rounded-lg shadow-md">
               <div className="flex">
                 <Image></Image>
-                <div className="">
-                  <h4 className="text-lg font-bold">HTML/CSS/SCSS</h4>
+                <div className="mb-3">
+                  <h4 className="text-lg font-bold mb-2">HTML/CSS/SCSS</h4>
                   <div className="text-xs">
                     <span>経験年数：</span>
                     <span>3年</span>
                   </div>
                 </div>
               </div>
-              <div className="w-full h-3 bg-blue-400 block rounded-4xl"></div>
+              <div className="w-full h-3 bg-blue-400 block rounded-4xl mb-2"></div>
               <p className="text-sm">セマンティックなマークアップとレスポンシブなスタイリング</p>
             </li>
-            <li className="p-5 bg-white rounded-lg">
+            <li className="p-5 bg-white rounded-lg shadow-md">
               <div className="flex">
                 <Image></Image>
                 <div className="">
@@ -44,7 +44,7 @@ const SkillSection: React.FC = () => {
               <div className="w-full h-3 bg-blue-400 block rounded-4xl"></div>
               <p className="text-sm">セマンティックなマークアップとレスポンシブなスタイリング</p>
             </li>
-            <li className="p-5 bg-white rounded-lg">
+            <li className="p-5 bg-white rounded-lg shadow-md">
               <div className="flex">
                 <Image></Image>
                 <div className="">
