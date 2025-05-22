@@ -1,2 +1,2 @@
--   **`styles/`**: グローバルスタイル定義
-    -   **`globals.css`**: Tailwind CSS のインポートと独自のグローバルスタイル
+- **`styles/`**: グローバルスタイル定義
+  - **`globals.css`**: Tailwind CSS のインポートと独自のグローバルスタイル

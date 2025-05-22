@@ -95,6 +95,66 @@
 
 -   Email or social media links
 
+## フォルダ構成
+
+### `public/`
+
+静的ファイルを格納しています。画像、アイコン、フォントなど、ビルドプロセスを通さずにそのまま配信されるファイルはここに配置しています。
+
+-   **`images/`**: サイトで使用する画像ファイル
+    -   **`projects/`**: 各プロジェクトのスクリーンショットや関連画像
+    -   **`profile/`**: プロフィール写真
+    -   **`backgrounds/`**: 背景画像やテクスチャ
+
+### `src/`
+
+アプリケーションのソースコードが含まれています。
+
+-   **`app/`**: Next.js 13+ の App Router を使用したページ構成
+
+    -   各フォルダがルートに対応しています
+
+-   **`components/`**: 再利用可能な React コンポーネント
+
+    -   **`layout/`**: ヘッダー、フッター、全体レイアウトなど
+    -   **`blocks/`**: ボタン、カード、入力フィールドなどの基本 UI 要素
+    -   **`sections/`**: ページの主要セクション（ヒーロー、スキル、タイムラインなど）
+    -   **`projects/`**: プロジェクト表示関連のコンポーネント
+    -   **`animations/`**: アニメーション効果を実装したコンポーネント
+
+-   **`lib/`**: ユーティリティ関数、データ、ヘルパーなど
+
+    -   **`projects.ts`**: プロジェクトの詳細データ
+    -   **`skills.ts`**: スキルデータ（カテゴリ、経験年数など）
+
+-   **`hooks/`**: カスタム React Hooks
+
+    -   **`useMediaQuery.ts`**: レスポンシブ対応のためのメディアクエリフック
+    -   **`useScrollPosition.ts`**: スクロール位置を検出するフック
+
+-   **`styles/`**: グローバルスタイル定義
+
+    -   **`globals.css`**: Tailwind CSS のインポートと独自のグローバルスタイル
+
+-   **`types/`**: TypeScript 型定義
+    -   プロジェクト全体で共有される型情報
+
+## 実装上の主なポイント
+
+-   **コンポーネントの分割**: 各コンポーネントは単一の責任を持ち、再利用可能なように設計
+-   **TypeScript**: 型安全性を確保し、開発体験を向上
+-   **レスポンシブデザイン**: モバイルファーストのアプローチで、すべての画面サイズに最適化
+-   **アクセシビリティ**: WAI-ARIA の実践とキーボードナビゲーションのサポート
+-   **パフォーマンス最適化**: 画像最適化、コード分割、レンダリングパフォーマンスの向上
+
+## 環境構築
+
+1. リポジトリをクローン:
+
+````bash
+git clone https://github.com/yourusername/portfolio-site.git
+cd portfolio-site
+
 # This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -109,7 +169,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
