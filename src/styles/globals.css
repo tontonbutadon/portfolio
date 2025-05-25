@@ -44,16 +44,9 @@
 }
 
 body {
-  /* background: var(--color-background); */
-  /* font-family: Arial, Helvetica, sans-serif; */
-}
-
-/* タイポグラフィの基本設定 */
-body {
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', 'Noto Sans JP', 'Helvetica Neue', sans-serif !important;
   color: var(--color-dark);
 }
-
 @layer base {
   html {
     font-size: 16px;

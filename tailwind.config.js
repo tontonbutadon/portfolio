@@ -25,11 +25,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        //フォント
-        sans: ['var(--font-mplus-rounded)', 'sans-serif'],
-        heading: ['var(--font-mplus-rounded)', 'sans-serif'],
-        // 英語用
-        en: ['var(--font-inter)', 'var(--font-mplus-rounded)', 'sans-serif'],
+        sans: ['Poppins', 'Noto Sans JP', 'Helvetica Neue', 'sans-serif'],
       },
     },
   },
