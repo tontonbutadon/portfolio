@@ -10,7 +10,7 @@ import { AboutRightTag } from '../blocks/AboutRightTags';
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="bg-[var(--color-background)] py-10 mb-10">
+    <section className="bg-[var(--color-background)] py-10 md:py-15 mb-15 md:mb-20">
       <div className="flex flex-col md:flex-row md:gap-16 m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl px-5">
         <div className="relative flex flex-col justify-start w-full md:w-1/2 mb-10 md:mb-0">
           <div>
