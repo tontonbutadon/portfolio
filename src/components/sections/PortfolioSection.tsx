@@ -13,7 +13,22 @@ import { LoadMoreButton } from '../blocks/LoadMoreButton';
 import { useState } from 'react';
 
 export const PortfolioSection: React.FC = ({}) => {
+  const INITIAL_DISPLAY_COUNT = 6;
   const [activeTabButton, setActiveTabButton] = useState('all');
+  const [filteredProjects, setFilteredProjects] = useState(portfolioProjectData);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_DISPLAY_COUNT);
+  const projectsToDisplay = filteredProjects.slice(0, visibleCount);
+  const loadMore = () => {
+    const loadCount = portfolioLoadMoreButtonData.count;
+    const newVisibleCount = Math.min(visibleCount + loadCount, filteredProjects.length);
+    setVisibleCount(newVisibleCount);
+  };
+  const filterProjects = (category: string) => {
+    if (category === 'all') {
+      return portfolioProjectData;
+    }
+    return portfolioProjectData.filter((project) => project.category === category);
+  };
 
   return (
     <section className="bg-[var(--color-background)] py-10 md:py-15">
@@ -31,22 +46,30 @@ export const PortfolioSection: React.FC = ({}) => {
                 key={button.id}
                 button={button}
                 isActive={activeTabButton === button.id ? true : false}
-                onClick={() => setActiveTabButton(button.id)}
+                onClick={() => {
+                  setActiveTabButton(button.id);
+                  const filtered = filterProjects(button.id);
+                  console.log('filteredProject: ', filtered);
+                  setFilteredProjects(filtered);
+                  setVisibleCount(INITIAL_DISPLAY_COUNT);
+                }}
               ></PortfolioTabButton>
             );
           })}
         </div>
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10 mb-10">
-          {portfolioProjectData.map((project, index) => {
+          {projectsToDisplay.map((project, index) => {
             return <PortfolioProjectCard project={project} key={index}></PortfolioProjectCard>;
           })}
         </ul>
-        <LoadMoreButton
-          button={portfolioLoadMoreButtonData}
-          onClick={() => {
-            console.log('click:, ', portfolioLoadMoreButtonData);
-          }}
-        ></LoadMoreButton>
+        {visibleCount < filteredProjects.length && (
+          <LoadMoreButton
+            button={portfolioLoadMoreButtonData}
+            onClick={() => {
+              loadMore();
+            }}
+          ></LoadMoreButton>
+        )}
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ export interface loadMoreButton {
 }
 
 export const portfolioLoadMoreButtonData: loadMoreButton = {
-  count: 10,
+  count: 9,
   text: 'もっと見る',
   bgColor: 'var(--color-flamingo)',
 };
