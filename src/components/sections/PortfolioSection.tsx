@@ -13,7 +13,7 @@ import { LoadMoreButton } from '../blocks/LoadMoreButton';
 import { useState } from 'react';
 
 export const PortfolioSection: React.FC = ({}) => {
-  const INITIAL_DISPLAY_COUNT = 6;
+  const INITIAL_DISPLAY_COUNT = 3;
   const [activeTabButton, setActiveTabButton] = useState('all');
   const [filteredProjects, setFilteredProjects] = useState(portfolioProjectData);
   const [visibleCount, setVisibleCount] = useState(INITIAL_DISPLAY_COUNT);
@@ -31,7 +31,7 @@ export const PortfolioSection: React.FC = ({}) => {
   };
 
   return (
-    <section className="bg-[var(--color-background)] py-10 md:py-15">
+    <section className="bg-[var(--color-background)] py-10 md:py-15 mb-15 md:mb-20">
       <div className="m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl">
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-semibold mb-2 md:mb-3">
           ポートフォリオ
