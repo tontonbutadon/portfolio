@@ -1,18 +1,50 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Skill } from '@/types/skills';
 
 interface SkillCardProps {
   skill: Skill;
 }
 function SkillCard({ skill }: SkillCardProps) {
+  const [isInitialDone, setIsInitialDone] = useState(false);
   //進捗バーをレンダリング
   const renderBar = () => {
-    return (
-      <div
-        className="h-full transition-all rounded-full "
-        style={{ width: `${skill.progressPercent}%`, backgroundColor: `${skill.barColor}` }}
-      ></div>
-    );
+    if (!isInitialDone) {
+      return (
+        <motion.div
+          className="h-full transition-all rounded-full "
+          style={{ backgroundColor: `${skill.barColor}` }}
+          initial={{ width: '0%' }}
+          whileInView={{
+            width: ['0%', `${skill.progressPercent}%`],
+          }}
+          transition={{ duration: 0.4, ease: 'linear' }}
+          onAnimationComplete={() => setIsInitialDone(true)}
+        ></motion.div>
+      );
+    } else {
+      return (
+        <motion.div
+          className="h-full transition-all rounded-full "
+          style={{ backgroundColor: `${skill.barColor}` }}
+          initial={{ width: `${skill.progressPercent}%` }}
+          animate={{
+            width: [
+              `${skill.progressPercent - 1}%`,
+              `${skill.progressPercent + 4}%`,
+              `${skill.progressPercent - 1}%`,
+              `${skill.progressPercent + 4}%`,
+            ],
+          }}
+          transition={{
+            duration: 0.4,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+        ></motion.div>
+      );
+    }
   };
 
   return (
