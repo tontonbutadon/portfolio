@@ -1,22 +1,26 @@
 'use client';
 import React from 'react';
+import { SectionTitle } from '../blocks/SectionTitle';
 // SkillCard
 import { skillsData } from '@/types/skills';
 import SkillCard from '../blocks/SkillCard';
+import { SectionContainer } from '../blocks/SectionContainer';
 
 const SkillSection: React.FC = () => {
   return (
-    <section className="max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl m-auto px-5  mb-15 md:mb-20">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-semibold mb-2 md:mb-3">
-        スキル
-      </h2>
-      <p className="text-base text-[var(--color-dark)]/70 m-auto text-center mb-8 md:mb-12">
-        フロントエンドを中心に
-        <span className="md:hidden">
-          <br></br>
-        </span>
-        幅広いスキルを持っています
-      </p>
+    <SectionContainer hasBackground={false}>
+      <SectionTitle
+        title="スキル"
+        subTitle={
+          <>
+            フロントエンドを中心に
+            <span className="md:hidden">
+              <br></br>
+            </span>
+            幅広いスキルを持っています
+          </>
+        }
+      ></SectionTitle>
       <div className="md:grid md:grid-cols-2 gap-x-5 md:gap-12">
         {skillsData.map((category) => {
           const renderIcon = () => {
@@ -50,7 +54,7 @@ const SkillSection: React.FC = () => {
           );
         })}
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

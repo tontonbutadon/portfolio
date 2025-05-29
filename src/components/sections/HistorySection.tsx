@@ -1,16 +1,14 @@
 import React from 'react';
+import { SectionContainer } from '../blocks/SectionContainer';
+import { SectionTitle } from '../blocks/SectionTitle';
+//History card
 import { HistoryCard } from '../blocks/HistoryCard';
 import { historyData } from '@/types/historyCard';
 
 export const HistorySection: React.FC = ({}) => {
   return (
-    <section className="max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl m-auto px-5 mb-15 md:mb-20">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-semibold mb-2 md:mb-3">
-        経歴
-      </h2>
-      <p className="text-base text-[var(--color-dark)]/70 m-auto text-center mb-8 md:mb-12">
-        これまでの職歴と学歴
-      </p>
+    <SectionContainer hasBackground={false}>
+      <SectionTitle title="経歴" subTitle="これまでの職歴と学歴"></SectionTitle>
       <div className="">
         <ul className="border-l-2 h-full pl-10 border-[var(--color-flamingo)]/40">
           {historyData.map((history) => {
@@ -18,6 +16,6 @@ export const HistorySection: React.FC = ({}) => {
           })}
         </ul>
       </div>
-    </section>
+    </SectionContainer>
   );
 };

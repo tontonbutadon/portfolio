@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import { SectionContainer } from '../blocks/SectionContainer';
+import { SectionTitle } from '../blocks/SectionTitle';
 //tab
 import { portfolioTabButtonData } from '@/types/portfolioTabButton';
 import PortfolioTabButton from '../blocks/PortfolioTabButton';
@@ -31,14 +33,12 @@ export const PortfolioSection: React.FC = ({}) => {
   };
 
   return (
-    <section className="bg-[var(--color-background)] py-10 md:py-15 mb-15 md:mb-20">
+    <SectionContainer hasBackground={true}>
       <div className="m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-semibold mb-2 md:mb-3">
-          ポートフォリオ
-        </h2>
-        <p className="text-base text-[var(--color-dark)]/70 m-auto text-center mb-8 md:mb-12">
-          これまでに手がけた主なプロジェクト・作品
-        </p>
+        <SectionTitle
+          title="ポートフォリオ"
+          subTitle="これまでに手がけた主なプロジェクト・作品"
+        ></SectionTitle>
         <div className="flex gap-4 flex-wrap justify-center mb-8 md:mb-12">
           {portfolioTabButtonData.map((button) => {
             return (
@@ -71,6 +71,6 @@ export const PortfolioSection: React.FC = ({}) => {
           ></LoadMoreButton>
         )}
       </div>
-    </section>
+    </SectionContainer>
   );
 };
