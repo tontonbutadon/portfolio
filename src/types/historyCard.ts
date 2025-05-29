@@ -3,7 +3,7 @@ export interface HistoryItem {
   title: string;
   company: string;
   period: { start: string; end?: string };
-  status: string; // "現在" | "学歴" | "アルバイト" || "職歴"
+  status: string; // "現在" | "学歴" | "アルバイト" | "職歴"
   description: string;
   isNested?: boolean; // 交換留学用
   children?: HistoryItem[]; // ネストした学歴カード用
