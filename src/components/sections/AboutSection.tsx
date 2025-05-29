@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import flamingoLogo from '@/assets/images/flamingo_logo.png';
+//section container
+
 //left
 import { circleParticlesAboutLeft } from '@/types/circleParticle';
 import { AboutLeftCircleParticles } from '../blocks/AboutLeftIcon';

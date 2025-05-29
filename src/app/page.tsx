@@ -7,7 +7,6 @@ import { HistorySection } from '@/components/sections/HistorySection';
 export default function Home() {
   return (
     <div className="w-full">
-      トップページ
       <HeroSection></HeroSection>
       <AboutSection></AboutSection>
       <SkillSection></SkillSection>
