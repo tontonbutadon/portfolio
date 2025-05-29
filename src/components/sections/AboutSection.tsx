@@ -22,8 +22,10 @@ const AboutSection: React.FC = () => {
             <Image src={flamingoLogo} alt="Reiロゴ" width={200} height={200}></Image>
           </div>
           <h1 className="text-left font-bold md:leading-16 text-4xl md:text-6xl mb-2 md:mb-5">
-            こんにちは、<br></br>
-            <span className="text-[var(--color-flamingo)]">フロントエンド</span>エンジニアです
+            <span className="text-[var(--color-flamingo)]">
+              <span className="md:block md:mb-4">No Swig, </span>
+              <span className="md:block md:pl-15">All Swing</span>
+            </span>
           </h1>
           <p className="text-left text-[var(--color-dark)]/80 font-medium text-xl md:text-[28px]">
             I create playful interfaces
