@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
 import { HistoryItem } from '@/types/historyCard';
 
 interface HistoryCardProps {
@@ -48,11 +50,25 @@ export const HistoryCard: React.FC<HistoryCardProps> = ({ historyCard }) => {
         <span className="absolute -top-1 -left-1 bg-[var(--color-flamingo)] w-5 h-5 rounded-full"></span>
         <div className="flex justify-between mb-2 md:mb-3">
           <span className="block font-semibold text-lg">{historyCard.title}</span>
-          <span
-            className={`block py-1 px-2 rounded-4xl ${historyCard.status === '現在' ? 'text-[var(--color-flamingo)] bg-[var(--color-flamingo)]/20' : 'text-[var(--color-dark)] bg-[var(--color-dark)]/20'}`}
+          <motion.span
+            className={`relative block py-1 px-2 rounded-4xl ${historyCard.status === '現在' ? 'text-[var(--color-flamingo)] bg-[var(--color-flamingo)]/20' : 'text-[var(--color-dark)] bg-[var(--color-dark)]/20'}`}
           >
             {historyCard.status}
-          </span>
+            {historyCard.status === '現在' && (
+              <motion.div
+                className="absolute -z-10 inset-0 bg-[var(--color-flamingo)]/20 rounded-4xl"
+                animate={{
+                  scale: [1, 1.3, 1.5, 1.3, 1],
+                  opacity: [0.3, 0.6, 0.2, 0.5, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeOut',
+                }}
+              />
+            )}
+          </motion.span>
         </div>
         <span className="block text-base mb-2 md:mb-3 text-[var(--color-dark)]/70">
           {historyCard.company}
