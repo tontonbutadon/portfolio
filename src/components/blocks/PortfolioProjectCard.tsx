@@ -59,7 +59,7 @@ export const PortfolioProjectCard: React.FC<PortfolioProjectProps> = ({ project 
             return <PortfolioProjectTag tag={tag} key={tag}></PortfolioProjectTag>;
           })}
         </div>
-        <motion.button
+        <button
           className="inline-flex items-center gap-2 text-lg text-[var(--color-flamingo)] font-medium cursor-pointer"
           onMouseEnter={() => setIsButtonhovered(true)}
           onMouseLeave={() => setIsButtonhovered(false)}
@@ -78,7 +78,7 @@ export const PortfolioProjectCard: React.FC<PortfolioProjectProps> = ({ project 
             // router.push(project.detailLink); // 後で有効化
           }}
         >
-          詳細を見る
+          くわしく見る
           <span
             className="w-0 h-0 border-l-[10px] border-l-[var(--color-flamingo)] border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent"
             style={{
@@ -87,7 +87,7 @@ export const PortfolioProjectCard: React.FC<PortfolioProjectProps> = ({ project 
               borderLeftColor: isButtonHovered ? 'white' : 'var(--color-flamingo)',
             }}
           ></span>
-        </motion.button>
+        </button>
       </div>
     </li>
   );

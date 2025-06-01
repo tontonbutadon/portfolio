@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { useState } from 'react';
 import { SectionContainer } from '../blocks/SectionContainer';
 import { SectionTitle } from '../blocks/SectionTitle';
 //tab
@@ -11,8 +12,6 @@ import { PortfolioProjectCard } from '../blocks/PortfolioProjectCard';
 //more button
 import { portfolioLoadMoreButtonData } from '@/types/loadMoreButton';
 import { LoadMoreButton } from '../blocks/LoadMoreButton';
-
-import { useState } from 'react';
 
 export const PortfolioSection: React.FC = ({}) => {
   const INITIAL_DISPLAY_COUNT = 3;
@@ -57,7 +56,7 @@ export const PortfolioSection: React.FC = ({}) => {
             );
           })}
         </div>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10 mb-10">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10 mb-8">
           {projectsToDisplay.map((project, index) => {
             return <PortfolioProjectCard project={project} key={index}></PortfolioProjectCard>;
           })}
