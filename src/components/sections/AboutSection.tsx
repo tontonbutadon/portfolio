@@ -1,4 +1,7 @@
+'use client';
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import flamingoLogo from '@/assets/images/flamingo_logo.png';
 //section container
@@ -6,11 +9,28 @@ import { SectionContainer } from '../blocks/SectionContainer';
 //left
 import { circleParticlesAboutLeft } from '@/types/circleParticle';
 import { AboutLeftCircleParticles } from '../blocks/AboutLeftIcon';
+import { useTypewriter } from '@/hooks/useTypewriter';
 //right
 import { aboutTagsData } from '@/types/aboutTags';
 import { AboutRightTag } from '../blocks/AboutRightTags';
 
 const AboutSection: React.FC = () => {
+  const [isContentLoaded, setIsContentLoaded] = useState<boolean>(false);
+  const { displayText } = useTypewriter('I create playful interfaces', 60, 20, isContentLoaded);
+
+  //DOM構築完了用
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsContentLoaded(true);
+    };
+    if (document.readyState === 'complete') {
+      setIsContentLoaded(true);
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+    return () => window.removeEventListener('load', handleLoad);
+  }, []);
+
   return (
     <SectionContainer hasBackground={true}>
       <div className="flex flex-col md:flex-row md:gap-16 m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl px-5">
@@ -30,7 +50,22 @@ const AboutSection: React.FC = () => {
             </span>
           </h1>
           <p className="text-left text-[var(--color-dark)]/80 font-medium text-xl md:text-[28px]">
-            I create playful interfaces
+            {displayText}
+            {displayText && (
+              <motion.span
+                className="ml-1.5 text-[var(--color-flamingo)] font-extralight"
+                animate={{
+                  opacity: [1, 1, 0, 0],
+                }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  ease: 'steps(1)',
+                }}
+              >
+                |
+              </motion.span>
+            )}
           </p>
         </div>
         <div className="flex justify-end items-center w-full md:w-1/2">
