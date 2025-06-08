@@ -41,7 +41,7 @@ const SkillSection: React.FC = () => {
               className="shadow-xl  bg-[var(--color-background)] p-10 rounded-3xl mb-10 md:mb-0"
               key={category.id}
             >
-              <div className="flex items-center font-bold text-lg md:text-2xl mv-6 md:mb-7">
+              <div className="flex items-center font-bold text-lg md:text-2xl mb-6 md:mb-7">
                 {renderIcon()}
                 <h3 className="">{category.label}</h3>
               </div>

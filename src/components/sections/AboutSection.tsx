@@ -10,6 +10,7 @@ import { SectionContainer } from '../blocks/SectionContainer';
 import { circleParticlesAboutLeft } from '@/types/circleParticle';
 import { AboutLeftCircleParticles } from '../blocks/AboutLeftIcon';
 import { useTypewriter } from '@/hooks/useTypewriter';
+import { ThreeH1Text } from '../blocks/ThreeH1Text';
 //right
 import { aboutTagsData } from '@/types/aboutTags';
 import { AboutRightTag } from '../blocks/AboutRightTags';
@@ -49,6 +50,7 @@ const AboutSection: React.FC = () => {
               <span className="md:block md:pl-15">All Swing</span>
             </span>
           </h1>
+          <ThreeH1Text></ThreeH1Text>
           <p className="text-left text-[var(--color-dark)]/80 font-medium text-xl md:text-[28px]">
             {displayText}
             {displayText && (
@@ -60,7 +62,7 @@ const AboutSection: React.FC = () => {
                 transition={{
                   duration: 1,
                   repeat: Infinity,
-                  ease: 'steps(1)',
+                  ease: 'linear',
                 }}
               >
                 |
