@@ -14,7 +14,7 @@ import { portfolioLoadMoreButtonData } from '@/types/loadMoreButton';
 import { LoadMoreButton } from '../blocks/LoadMoreButton';
 
 export const PortfolioSection: React.FC = ({}) => {
-  const INITIAL_DISPLAY_COUNT = 3;
+  const INITIAL_DISPLAY_COUNT = 6;
   const [activeTabButton, setActiveTabButton] = useState('all');
   const [filteredProjects, setFilteredProjects] = useState(portfolioProjectData);
   const [visibleCount, setVisibleCount] = useState(INITIAL_DISPLAY_COUNT);

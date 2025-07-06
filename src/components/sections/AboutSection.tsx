@@ -17,7 +17,12 @@ import { AboutRightTag } from '../blocks/AboutRightTags';
 
 const AboutSection: React.FC = () => {
   const [isContentLoaded, setIsContentLoaded] = useState<boolean>(false);
-  const { displayText } = useTypewriter('I create playful interfaces', 60, 20, isContentLoaded);
+  const { displayText } = useTypewriter(
+    'From spark to screen, I shape every detail.',
+    60,
+    20,
+    isContentLoaded
+  );
 
   //DOM構築完了用
   useEffect(() => {
@@ -36,7 +41,7 @@ const AboutSection: React.FC = () => {
     <SectionContainer hasBackground={true}>
       <div className="flex flex-col md:flex-row md:gap-16 m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl px-5">
         <div className="relative flex flex-col justify-start w-full md:w-1/2 mb-10 md:mb-0">
-          <div>
+          <div className="mb-2 md:mb-4">
             {circleParticlesAboutLeft.map((circle, index) => {
               return (
                 <AboutLeftCircleParticles circle={circle} key={index}></AboutLeftCircleParticles>
@@ -44,14 +49,10 @@ const AboutSection: React.FC = () => {
             })}
             <Image src={flamingoLogo} alt="Reiロゴ" width={200} height={200}></Image>
           </div>
-          <h1 className="text-left font-bold md:leading-16 text-4xl md:text-6xl mb-2 md:mb-5">
-            <span className="text-[var(--color-flamingo)]">
-              <span className="md:block md:mb-4">No Swig, </span>
-              <span className="md:block md:pl-15">All Swing</span>
-            </span>
+          <h1 className="text-left font-bold text-[var(--color-flamingo)] md:leading-16 text-4xl md:text-5xl mb-2 md:mb-4">
+            Hands on. Heart in.
           </h1>
-          <ThreeH1Text></ThreeH1Text>
-          <p className="text-left text-[var(--color-dark)]/80 font-medium text-xl md:text-[28px]">
+          <p className="text-left text-[var(--color-dark)]/80 font-medium text-xl md:text-[24px]">
             {displayText}
             {displayText && (
               <motion.span

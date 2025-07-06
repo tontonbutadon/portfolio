@@ -3,10 +3,21 @@ import { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Text3D, Center } from '@react-three/drei';
 import { colors } from '@/lib/color';
-import { metalness } from 'three/tsl';
+import * as THREE from 'three';
 
 export const ThreeH1Text: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const frontMaterial = new THREE.MeshStandardMaterial({
+    color: colors.flamingo,
+    metalness: 0.3,
+    roughness: 0.25,
+  });
+
+  const sideMaterial = new THREE.MeshStandardMaterial({
+    color: colors.accent2,
+    metalness: 0.1,
+    roughness: 0.4,
+  });
 
   useEffect(() => {
     const checkMobile = () => {
@@ -22,8 +33,14 @@ export const ThreeH1Text: React.FC = () => {
       <Canvas camera={{ position: [0, 0, 5] }} className="h-full w-full" shadows>
         <ambientLight intensity={3} />
         <directionalLight
-          position={[10, 10, 5]}
-          intensity={2}
+          position={[-5, 2.4, 10]}
+          intensity={1.5}
+          castShadow
+          shadow-mapSize={[1024, 1024]} // 影の解像度
+        />
+        <directionalLight
+          position={[-3, -1, 10]}
+          intensity={1.5}
           castShadow
           shadow-mapSize={[1024, 1024]} // 影の解像度
         />
@@ -43,37 +60,32 @@ export const ThreeH1Text: React.FC = () => {
             <Text3D
               font="/font/Inter_Bold.json"
               position={[1, 0.8, 0]}
-              size={1.6}
-              height={0.25}
+              size={1.8}
+              height={0.4}
               curveSegments={32}
               bevelEnabled
-              bevelSize={0.03}
-              bevelThickness={0.1}
-              letterSpacing={-0.03}
-              rotation={[-0.1, -0.1, 0]}
+              bevelSize={0.3}
+              bevelThickness={0.3}
+              letterSpacing={0.25}
+              rotation={[0, 0.01, 0]}
+              material={[frontMaterial, sideMaterial]}
             >
               No Swig,
-              <meshStandardMaterial
-                color={colors.flamingo}
-                metalness={0.1}
-                roughness={0.3}
-              ></meshStandardMaterial>
             </Text3D>
             <Text3D
               font="/font/Inter_Bold.json"
-              position={[2, -2, 0]}
-              size={1.6}
-              height={0.2}
-              bevelEnabled={true}
-              bevelSize={0.02}
-              bevelThickness={0.01}
+              position={[2, -2.5, 0]}
+              size={1.8}
+              height={0.4}
+              curveSegments={32}
+              bevelEnabled
+              bevelSize={0.3}
+              bevelThickness={0.3}
+              letterSpacing={0.25}
+              rotation={[0, 0.01, 0]}
+              material={[frontMaterial, sideMaterial]}
             >
               All Swing
-              <meshStandardMaterial
-                color={colors.flamingo}
-                metalness={0.1}
-                roughness={0.3}
-              ></meshStandardMaterial>
             </Text3D>
           </group>
         )}

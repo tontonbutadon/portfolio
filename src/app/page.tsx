@@ -1,16 +1,16 @@
-import HeroSection from '@/components/sections/HeroSection';
+import { HeaderSection } from '@/components/sections/HeaderSection';
 import SkillSection from '@/components/sections/SkillSection';
 import AboutSection from '@/components/sections/AboutSection';
-import { PortfolioSection } from '@/components/sections/PortfolioSection';
 import { HistorySection } from '@/components/sections/HistorySection';
+import { TopPortfolioSection } from '@/components/sections/TopPortfolioSection';
 
 export default function Home() {
   return (
     <div className="w-full">
-      <HeroSection></HeroSection>
+      <HeaderSection></HeaderSection>
       <AboutSection></AboutSection>
       <SkillSection></SkillSection>
-      <PortfolioSection></PortfolioSection>
+      <TopPortfolioSection></TopPortfolioSection>
       <HistorySection></HistorySection>
     </div>
   );
