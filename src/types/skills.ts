@@ -2,6 +2,7 @@ import { SiShopify } from 'react-icons/si';
 import { IoServerOutline, IoAnalytics } from 'react-icons/io5';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { SlSettings } from 'react-icons/sl';
+import { IoIosHappy } from 'react-icons/io';
 export interface Skill {
   title: string;
   experience: number;
@@ -51,13 +52,13 @@ export const skillsData: SkillCategory[] = [
       },
       {
         title: 'Typescript',
-        experience: 1,
+        experience: 0.5,
         barColor: 'var(--color-typescript)',
         progressPercent: 25,
       },
       {
         title: 'React',
-        experience: 1,
+        experience: 0.5,
         barColor: 'var(--color-react)',
         progressPercent: 25,
       },
@@ -96,7 +97,7 @@ export const skillsData: SkillCategory[] = [
   },
   {
     id: 'backend',
-    label: 'バックエンド・AWS',
+    label: 'バックエンド',
     icon: { type: 'react-icon', content: IoServerOutline },
     skills: [
       {
@@ -130,17 +131,17 @@ export const skillsData: SkillCategory[] = [
         barColor: 'var(--color-ux)',
         progressPercent: 50,
       },
-      {
-        title: 'Google Analytics',
-        experience: 1,
-        barColor: 'var(--color-google-analytics)',
-        progressPercent: 50,
-      },
+      // {
+      //   title: 'Google Analytics',
+      //   experience: 1,
+      //   barColor: 'var(--color-google-analytics)',
+      //   progressPercent: 50,
+      // },
     ],
   },
   {
     id: 'tools',
-    label: 'ツール・手法',
+    label: 'ツール',
     icon: { type: 'react-icon', content: SlSettings },
     skills: [
       {
@@ -149,17 +150,36 @@ export const skillsData: SkillCategory[] = [
         barColor: 'var(--color-github)',
         progressPercent: 80,
       },
-      {
-        title: 'アジャイル',
-        experience: 3,
-        barColor: 'var(--color-scrum)',
-        progressPercent: 75,
-      },
+      // {
+      //   title: 'アジャイル',
+      //   experience: 3,
+      //   barColor: 'var(--color-scrum)',
+      //   progressPercent: 75,
+      // },
       {
         title: 'Asana/Backlog/Slack',
         experience: 3,
         barColor: 'var(--color-asana)',
         progressPercent: 80,
+      },
+    ],
+  },
+  {
+    id: 'studying',
+    label: '学習中',
+    icon: { type: 'react-icon', content: IoIosHappy },
+    skills: [
+      {
+        title: 'Three.js',
+        experience: 0.1,
+        barColor: 'var(--color-threejs)',
+        progressPercent: 5,
+      },
+      {
+        title: 'Blender',
+        experience: 0.1,
+        barColor: 'var(--color-blender)',
+        progressPercent: 5,
       },
     ],
   },

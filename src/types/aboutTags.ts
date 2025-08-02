@@ -22,14 +22,4 @@ export const aboutTagsData: AboutTag[] = [
     bgColor: 'var(--color-aws)',
     bgOpacity: 10,
   },
-  {
-    title: 'パフォーマンス最適化',
-    bgColor: 'var(--color-speed)',
-    bgOpacity: 10,
-  },
-  {
-    title: 'アジャイル',
-    bgColor: 'var(--color-scrum)',
-    bgOpacity: 10,
-  },
 ];

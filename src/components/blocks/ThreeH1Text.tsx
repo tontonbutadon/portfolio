@@ -29,8 +29,8 @@ export const ThreeH1Text: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-[50px] md:h-[200px] w-full">
-      <Canvas camera={{ position: [0, 0, 5] }} className="h-full w-full" shadows>
+    <div className="h-full w-full">
+      <Canvas camera={{ position: [0, 0, 7.5], fov: 50 }} className="h-full w-full" shadows>
         <ambientLight intensity={3} />
         <directionalLight
           position={[-5, 2.4, 10]}
@@ -51,43 +51,104 @@ export const ThreeH1Text: React.FC = () => {
 
         {isMobile ? (
           // モバイル: 1行
-          <Text3D font="/font/Inter_Bold.json" position={[-8, 0, 0]}>
-            No Swig, All Swing
-          </Text3D>
+          <Center>
+            <Text3D
+              font="/font/Reggae One_Regular.json"
+              position={[-2, 2.2, 0]}
+              size={1.2}
+              height={0.3}
+              curveSegments={32}
+              bevelEnabled
+              bevelSize={0.3}
+              bevelThickness={0.3}
+              letterSpacing={0.25}
+              rotation={[0, 0.01, 0]}
+              material={[frontMaterial, sideMaterial]}
+            >
+              ここに何を
+            </Text3D>
+            <Text3D
+              font="/font/Reggae One_Regular.json"
+              position={[-1, 0, 0]}
+              size={1.2}
+              height={0.3}
+              curveSegments={32}
+              bevelEnabled
+              bevelSize={0.3}
+              bevelThickness={0.3}
+              letterSpacing={0.25}
+              rotation={[0, 0.01, 0]}
+              material={[frontMaterial, sideMaterial]}
+            >
+              いれるか
+            </Text3D>
+            <Text3D
+              font="/font/Reggae One_Regular.json"
+              position={[-1, -2.2, 0]}
+              size={1.2}
+              height={0.3}
+              curveSegments={32}
+              bevelEnabled
+              bevelSize={0.3}
+              bevelThickness={0.3}
+              letterSpacing={0.25}
+              rotation={[0, 0.01, 0]}
+              material={[frontMaterial, sideMaterial]}
+            >
+              考え中！
+            </Text3D>
+          </Center>
         ) : (
-          // デスクトップ: 2行 + インデント
-          <group position={[-8.5, 0, 0]}>
-            <Text3D
-              font="/font/Inter_Bold.json"
-              position={[1, 0.8, 0]}
-              size={1.8}
-              height={0.4}
-              curveSegments={32}
-              bevelEnabled
-              bevelSize={0.3}
-              bevelThickness={0.3}
-              letterSpacing={0.25}
-              rotation={[0, 0.01, 0]}
-              material={[frontMaterial, sideMaterial]}
-            >
-              No Swig,
-            </Text3D>
-            <Text3D
-              font="/font/Inter_Bold.json"
-              position={[2, -2.5, 0]}
-              size={1.8}
-              height={0.4}
-              curveSegments={32}
-              bevelEnabled
-              bevelSize={0.3}
-              bevelThickness={0.3}
-              letterSpacing={0.25}
-              rotation={[0, 0.01, 0]}
-              material={[frontMaterial, sideMaterial]}
-            >
-              All Swing
-            </Text3D>
-          </group>
+          // デスクトップ: 3行 + インデント
+          <Center>
+            <group position={[-8.5, 0, 0]}>
+              <Text3D
+                font="/font/Reggae One_Regular.json"
+                position={[3.5, 1.5, 0]}
+                size={1.2}
+                height={0.3}
+                curveSegments={32}
+                bevelEnabled
+                bevelSize={0.3}
+                bevelThickness={0.3}
+                letterSpacing={0.25}
+                rotation={[0, 0.01, 0]}
+                material={[frontMaterial, sideMaterial]}
+              >
+                ここに何を
+              </Text3D>
+              <Text3D
+                font="/font/Reggae One_Regular.json"
+                position={[3.5, -0.6, 0]}
+                size={1.2}
+                height={0.3}
+                curveSegments={32}
+                bevelEnabled
+                bevelSize={0.3}
+                bevelThickness={0.3}
+                letterSpacing={0.25}
+                rotation={[0, 0.01, 0]}
+                material={[frontMaterial, sideMaterial]}
+              >
+                いれるか
+              </Text3D>
+              <Text3D
+                font="/font/Reggae One_Regular.json"
+                position={[3.5, -2.7, 0]}
+                size={1.2}
+                height={0.4}
+                curveSegments={32}
+                bevelEnabled
+                bevelSize={0.3}
+                bevelThickness={0.3}
+                letterSpacing={0.25}
+                rotation={[0, 0.01, 0]}
+                material={[frontMaterial, sideMaterial]}
+              >
+                考え中！
+              </Text3D>
+            </group>
+          </Center>
         )}
       </Canvas>
     </div>

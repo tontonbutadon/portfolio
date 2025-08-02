@@ -84,7 +84,14 @@ export const HistoryCard: React.FC<HistoryCardProps> = ({ historyCard }) => {
             ）
           </span>
         </span>
-        <p>{historyCard.description}</p>
+        <p>
+          {historyCard.description.split('\n').map((line, idx) => (
+            <React.Fragment key={idx}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
       </div>
     </li>
   );

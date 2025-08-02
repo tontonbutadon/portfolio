@@ -6,6 +6,7 @@ interface PortfolioProjectTagProps {
 
 export const PortfolioProjectTag: React.FC<PortfolioProjectTagProps> = ({ tag }) => {
   const getTagColor = (tagName: string) => {
+    const normalizedTag = tagName.toLowerCase().replace(/[^a-z0-9]/g, '');
     const colorMap: { [key: string]: string } = {
       react: 'var(--color-react)',
       javascript: 'var(--color-javascript)',
@@ -31,9 +32,12 @@ export const PortfolioProjectTag: React.FC<PortfolioProjectTagProps> = ({ tag })
       scrum: 'var(--color-scrum)',
       agile: 'var(--color-scrum)',
       asana: 'var(--color-asana)',
+      nextjs: 'var(--color-nextjs)',
+      vercel: 'var(--color-vercel)',
+      canva: 'var(--color-canva)',
       // デフォルト
     };
-    return colorMap[tagName.toLowerCase()] || 'var(--color-app)'; // gray-500の代わりにappカラー
+    return colorMap[normalizedTag] || 'var(--color-app)'; // gray-500の代わりにappカラー
   };
 
   return (

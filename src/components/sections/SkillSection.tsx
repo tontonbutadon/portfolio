@@ -17,7 +17,7 @@ const SkillSection: React.FC = () => {
             <span className="md:hidden">
               <br></br>
             </span>
-            幅広いスキルを持っています
+            幅広いスキルを習得中です。
           </>
         }
       ></SectionTitle>

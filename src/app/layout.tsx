@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [{ url: '/favicon.ico' }],
+    icon: [{ url: '@/assets/images/flamingo_logo.png' }],
     apple: [{ url: '/apple-touch-icon.png' }],
   },
 };

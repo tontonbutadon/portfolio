@@ -29,6 +29,11 @@
   --color-github: #24292e;
   --color-scrum: #34d399;
   --color-asana: #fc636b;
+  --color-threejs: #ff3e00;
+  --color-blender: #f5792a;
+  --color-nextjs: #000000;
+  --color-vercel: #000000;
+  --color-canva: #00c4cc;
 }
 
 @theme inline {

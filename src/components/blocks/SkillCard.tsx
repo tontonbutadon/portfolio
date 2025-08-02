@@ -51,7 +51,11 @@ function SkillCard({ skill }: SkillCardProps) {
     <li className="mb-5">
       <div className="flex text-base md:text-lg mb-2">
         <h4 className="mr-auto font-semibold ">{skill.title}</h4>
-        <div className="text-[var(--color-dark)]/70">{skill.experience}年</div>
+        <div className="text-[var(--color-dark)]/70">
+          {skill.experience < 1
+            ? `${Math.floor(skill.experience * 12)}ヶ月`
+            : `${parseFloat(skill.experience.toFixed(1))}年`}
+        </div>
       </div>
       <div className="w-full h-3 rounded-full mb-5 overflow-hidden shadow-inner bg-gray-100">
         {renderBar()}

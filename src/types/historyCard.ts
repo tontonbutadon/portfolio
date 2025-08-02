@@ -20,7 +20,7 @@ export const historyData: HistoryItem[] = [
     },
     status: '現在',
     description:
-      '新卒で入社。\n社内唯一のエンジニアとして、Shopifyで構築されたECサイト開発・運用を中心に、フロントエンドからバックエンドまで担当。データドリブンなUI・UXの改善にも取り組む。',
+      '新卒で入社。\n社内唯一のエンジニアとして、Shopifyで構築されたECサイトの開発・運用を中心に、フロントエンドからバックエンドまで担当。UI・UXの改善にも取り組む。',
   },
   {
     id: 'tutor',
@@ -31,30 +31,31 @@ export const historyData: HistoryItem[] = [
       end: '2022-02-29',
     },
     status: 'アルバイト',
-    description: '卒業から入学までの間、家庭教師のアルバイトをする',
+    description: '帰国後から入社までの8ヶ月間、家庭教師のアルバイトをする。',
   },
   {
     id: 'university',
-    title: '情報工学専攻',
-    company: 'ヴィリニュスゲディミナス工科大学',
+    title: '大学',
+    company: 'Vilnius Gediminas Technical University',
     period: {
       start: '2017-09-01',
       end: '2021-07-14',
     },
     status: '学歴',
-    description: 'ソフトウェアエンジニアリングを専攻。',
+    description:
+      'ソフトウェアエンジニアリングを専攻。Java, C+を使ったプログラミング、データベース、要件定義書の作成などの基礎を学ぶ。',
     children: [
       {
         id: 'exchange',
         title: '交換留学',
-        company: 'タルトゥ大学',
+        company: 'University of Tartu',
         period: {
           start: '2021-09-01',
           end: '2022-02-28',
         },
         status: '学歴',
         description:
-          'エストニアのタルトゥ大学に半年間、交換留学を行う。データ分析やロシア語など幅広い授業を履修',
+          'エストニアのタルトゥ大学に半年間、交換留学を行う。データ分析やロシア語など幅広い授業を履修。',
         isNested: true,
       },
     ],

@@ -27,12 +27,12 @@ export const HeaderSection: React.FC = () => {
         </ul>
 
         {/* ハンバーガーアイコン */}
-        <button
+        {/* <button
           className="md:hidden text-[var(--color-dark)] cursor-pointer"
           onClick={() => setMenuOpen((prev) => !prev)}
         >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
+        </button> */}
       </div>
 
       {/* モバイルメニュー */}

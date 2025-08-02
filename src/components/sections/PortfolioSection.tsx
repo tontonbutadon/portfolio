@@ -35,8 +35,8 @@ export const PortfolioSection: React.FC = ({}) => {
     <SectionContainer hasBackground={true}>
       <div className="m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl">
         <SectionTitle
-          title="ポートフォリオ"
-          subTitle="これまでに手がけた主なプロジェクト・作品"
+          title="つくってみたもの"
+          subTitle="気になったことや「こうしたら便利そう」をカタチにした記録です。"
         ></SectionTitle>
         <div className="flex gap-4 flex-wrap justify-center mb-8 md:mb-12">
           {portfolioTabButtonData.map((button) => {

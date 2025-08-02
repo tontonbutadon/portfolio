@@ -41,7 +41,7 @@ const AboutSection: React.FC = () => {
     <SectionContainer hasBackground={true}>
       <div className="flex flex-col md:flex-row md:gap-16 m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl px-5">
         <div className="relative flex flex-col justify-start w-full md:w-1/2 mb-10 md:mb-0">
-          <div className="mb-2 md:mb-4">
+          {/* <div className="mb-2 md:mb-4">
             {circleParticlesAboutLeft.map((circle, index) => {
               return (
                 <AboutLeftCircleParticles circle={circle} key={index}></AboutLeftCircleParticles>
@@ -69,18 +69,18 @@ const AboutSection: React.FC = () => {
                 |
               </motion.span>
             )}
-          </p>
+          </p> */}
+          <ThreeH1Text></ThreeH1Text>
         </div>
         <div className="flex justify-end items-center w-full md:w-1/2">
           <div className="bg-white rounded-3xl p-8">
             <h2 className="text-2xl font-bold mb-5">自己紹介</h2>
             <div className="text-lg mb-5">
               <p className="mb-5">
-                フロントエンドを中心に、バックエンドも対応できるエンジニアです。ユーザー体験を大切にした遊び心のあるインターフェースづくりが得意です。
+                Shopifyで構築されたECサイトの開発・運用をしています。フロントエンドを中心にUIの改善や機能追加などを行いながら、少しずつバックエンド開発にもチャレンジしています。
+                <br></br>
               </p>
-              <p>
-                Shopifyカスタマイズやパフォーマンス最適化にも取り組んでいます。説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明
-              </p>
+              <p></p>
             </div>
             <div className="flex flex-wrap gap-4 text-lg">
               {aboutTagsData.map((tag) => {
