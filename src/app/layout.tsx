@@ -20,8 +20,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     url: 'https://www.yourportfolio.com/',
-    title: '安田零 | ECエンジニア/フロントエンド開発者',
-    description: 'Shopify専門のエンジニア、UI/UX最適化のスペシャリスト',
+    title: '安田零',
+    description:
+      'Shopifyで構築されたECサイトの開発・運用をしています。フロントエンドを中心にUIの改善や機能追加などを行いながら、少しずつバックエンド開発にもチャレンジしています。',
     siteName: '安田零 ポートフォリオ',
     images: [
       {
@@ -34,8 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '安田零 | ECエンジニア/フロントエンド開発者',
-    description: 'フロントエンドエンジニア、UI/UX最適化のスペシャリスト',
+    title: '安田零',
+    description:
+      'Shopifyで構築されたECサイトの開発・運用をしています。フロントエンドを中心にUIの改善や機能追加などを行いながら、少しずつバックエンド開発にもチャレンジしています。/UX最適化のスペシャリスト',
     images: ['/images/twitter-image.jpg'],
     creator: '@yourtwitterhandle',
   },
@@ -44,8 +46,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [{ url: '@/assets/images/flamingo_logo.png' }],
-    apple: [{ url: '/apple-touch-icon.png' }],
+    icon: [{ url: '/favicon.ico' }],
   },
 };
 // フォント
