@@ -3,7 +3,7 @@ import { Poppins, Noto_Sans_JP } from 'next/font/google';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
-  title: '安田零 | ECエンジニア/フロントエンド開発者ポートフォリオ',
+  title: '安田零の自己紹介サイト',
   description:
     'フロントエンドエンジニアとして、UI/UX最適化に焦点を当て、技術的な専門知識とビジネス的な洞察を組み合わせた魅力的なデジタル体験を構築しています。',
   keywords: [
