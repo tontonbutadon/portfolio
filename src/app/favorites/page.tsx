@@ -5,17 +5,7 @@ import { SectionTitle } from '@/components/blocks/SectionTitle';
 import { favoriteData } from '@/types/favoriteData';
 import { RiPushpinFill } from 'react-icons/ri';
 import { HeaderSection } from '@/components/sections/HeaderSection';
-
-export const pastelFavoriteBg = [
-  '#ffeaea', // 薄ピンク
-  '#eaf6ff', // 薄水色
-  '#f3ffe8', // 薄緑
-  '#fffbe8', // 薄黄
-  '#f6f0ff', // 薄紫
-  '#eafff5', // 薄エメラルド
-  '#fef5e7', // 淡オレンジ
-  '#fff0f0', // 薄赤
-];
+import { pastelFavoriteBg } from '@/types/favoritesPageBg';
 
 // データをネストしたリストに変換
 type RecursiveItem = string | { title?: string; desc?: string; children?: RecursiveItem[] };
