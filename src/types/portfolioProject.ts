@@ -1,6 +1,6 @@
-import { DiHtml5 } from 'react-icons/di';
-import { BiShoppingBag } from 'react-icons/bi';
-import { BsThunderbolt } from 'react-icons/bs';
+// import { BiShoppingBag } from 'react-icons/bi';
+import { SiTypescript } from 'react-icons/si';
+import { LuNotebookPen } from 'react-icons/lu';
 
 export interface PortfolioProject {
   id: string;
@@ -18,12 +18,12 @@ export const portfolioProjectData: PortfolioProject[] = [
   {
     id: 'project-2',
     category: 'frontend',
-    icon: DiHtml5,
+    icon: SiTypescript,
     gradientFrom: 'var(--color-react)',
     gradientTo: 'var(--color-typescript)',
     title: '社内メッセージサイト',
     description:
-      '半期に一度、社員同士で「感謝のメッセージ」を送り合う社内文化があり、Googleフォームで行っていた運用を、Typescript+＋React＋AWSで置き換えたSPAツールです。\n認証・投稿・メール通知・DB保存までを自動化し、業務の手間を大幅に軽減しました。',
+      '半期に一度、社員同士で「感謝のメッセージ」を送り合う社内文化があり、Googleフォームで行っていた運用を、Typescript+＋React＋AWSで置き換えたSPAツールです。\n認証・投稿・メール通知・DB保存までを自動化し、業務の手間を軽減しました。',
     tags: ['Typescript', 'React', 'AWS'],
     detailLink: '/portfolio/project-1',
     date: '2025-02-01',
@@ -31,12 +31,12 @@ export const portfolioProjectData: PortfolioProject[] = [
   {
     id: 'project-1',
     category: 'frontend, backend',
-    icon: BiShoppingBag,
+    icon: LuNotebookPen,
     gradientFrom: 'var(--color-shopify-1)',
     gradientTo: 'var(--color-shopify-3)',
     title: 'ポートフォリオサイト',
     description:
-      'リトアニアに留学中ブログとして使用していたドメインを、ポートフォリオ用に更新しました。\nシンプルなデザインにし、スキルが伝わりやすい構成になるよう工夫していきます。',
+      'リトアニアに留学中、ブログとして使用していたドメインをポートフォリオ用に更新しました。\n今後、ブログや作ったものを足していく予定。',
     tags: ['Next.js', 'Vercel', 'Typescript', 'React', 'Tailwind', 'Canva'],
     detailLink: '/portfolio/project-2',
     date: '2025-08-01',

@@ -7,7 +7,7 @@ import { TopPortfolioSection } from '@/components/sections/TopPortfolioSection';
 export default function Home() {
   return (
     <div className="w-full">
-      {/* <HeaderSection></HeaderSection> */}
+      <HeaderSection></HeaderSection>
       <AboutSection></AboutSection>
       <SkillSection></SkillSection>
       <TopPortfolioSection></TopPortfolioSection>

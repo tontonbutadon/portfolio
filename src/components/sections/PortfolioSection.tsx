@@ -36,7 +36,7 @@ export const PortfolioSection: React.FC = ({}) => {
       <div className="m-auto max-w-sm md:max-w-5xl lg:max-w-6xl xl:max-w-7xl">
         <SectionTitle
           title="つくってみたもの"
-          subTitle="気になったことや「こうしたら便利そう」をカタチにした記録です。"
+          subTitle="気になる、面白そう、作ってみたいをカタチにした記録です。"
         ></SectionTitle>
         <div className="flex gap-4 flex-wrap justify-center mb-8 md:mb-12">
           {portfolioTabButtonData.map((button) => {
