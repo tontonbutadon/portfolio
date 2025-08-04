@@ -22,57 +22,65 @@ export const PortfolioProjectCard: React.FC<PortfolioProjectProps> = ({ project 
     }
   };
 
-  return (
-    <Link href={project.detailLink} passHref>
-      <li
-        className="relative flex flex-col h-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden bg-white cursor-pointer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {isHovered && (
-          <motion.div
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
-            animate={{
-              background: [
-                'linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.8) 50%, transparent 55%)',
-                'linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.8) 50%, transparent 55%)',
-              ],
-              x: ['-100%', '100%'],
-            }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
-            style={{ zIndex: 10 }}
-          />
-        )}
-
-        <div
-          className="flex items-center justify-center bg-gradient-to-br h-44"
-          style={{
-            background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)`,
+  const cardContent = (
+    <li
+      className={`relative flex flex-col h-full shadow-md hover:shadow-lg transition-all duration-300 ${
+        project.isReady ? 'hover:-translate-y-1 cursor-pointer' : 'cursor-not-allowed'
+      } rounded-2xl overflow-hidden bg-white`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {isHovered && project.isReady && (
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          animate={{
+            background: [
+              'linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.8) 50%, transparent 55%)',
+              'linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.8) 50%, transparent 55%)',
+            ],
+            x: ['-100%', '100%'],
           }}
-        >
-          {renderIcon(project)}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          style={{ zIndex: 10 }}
+        />
+      )}
+
+      <div
+        className="flex items-center justify-center bg-gradient-to-br h-44"
+        style={{
+          background: `linear-gradient(135deg, ${project.gradientFrom} 0%, ${project.gradientTo} 100%)`,
+        }}
+      >
+        {renderIcon(project)}
+      </div>
+      <div className="bg-white py-8 px-4">
+        <h3 className="font-semibold text-xl mb-3">{project.title}</h3>
+        <p className="text-[var(--color-dark)]/70 mb-4">
+          {project.description.split('\n').map((line, idx) => (
+            <React.Fragment key={idx}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+        <div className="flex gap-2 mb-5 text-sm flex-wrap">
+          {project.tags.map((tag) => (
+            <PortfolioProjectTag tag={tag} key={tag} />
+          ))}
         </div>
-        <div className="bg-white py-8 px-4">
-          <h3 className="font-semibold text-xl mb-3">{project.title}</h3>
-          <p className="text-[var(--color-dark)]/70 mb-4">
-            {project.description.split('\n').map((line, idx) => (
-              <React.Fragment key={idx}>
-                {line}
-                <br />
-              </React.Fragment>
-            ))}
-          </p>
-          <div className="flex gap-2 mb-5 text-sm flex-wrap">
-            {project.tags.map((tag) => (
-              <PortfolioProjectTag tag={tag} key={tag} />
-            ))}
-          </div>
-          <span className="inline-flex items-center gap-2 text-lg text-[var(--color-flamingo)] font-medium">
-            くわしく見る
-            <span className="w-0 h-0 border-l-[10px] border-l-[var(--color-flamingo)] border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent" />
-          </span>
+        <span className="inline-flex items-center gap-2 text-lg text-[var(--color-flamingo)] font-medium">
+          くわしく見る
+          <span className="w-0 h-0 border-l-[10px] border-l-[var(--color-flamingo)] border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent" />
+        </span>
+      </div>
+
+      {!project.isReady && (
+        <div className="absolute top-0 left-0 w-full h-full z-20 flex items-center justify-center bg-gray-400/40 backdrop-blur-sm">
+          <span className="text-white text-xl font-semibold">準備中</span>
         </div>
-      </li>
-    </Link>
+      )}
+    </li>
   );
+
+  return project.isReady ? <Link href={project.detailLink}>{cardContent}</Link> : cardContent;
 };

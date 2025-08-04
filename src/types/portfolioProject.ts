@@ -13,6 +13,7 @@ export interface PortfolioProject {
   tags: string[];
   detailLink: string;
   date: string;
+  isReady: boolean;
 }
 export const portfolioProjectData: PortfolioProject[] = [
   {
@@ -27,6 +28,7 @@ export const portfolioProjectData: PortfolioProject[] = [
     tags: ['Typescript', 'React', 'AWS'],
     detailLink: '/portfolio/project-1',
     date: '2025-02-01',
+    isReady: false,
   },
   {
     id: 'project-1',
@@ -40,6 +42,7 @@ export const portfolioProjectData: PortfolioProject[] = [
     tags: ['Next.js', 'Vercel', 'Typescript', 'React', 'Tailwind', 'Canva'],
     detailLink: '/portfolio/project-2',
     date: '2025-08-01',
+    isReady: false,
   },
   // {
   //   id: 'project-3',
